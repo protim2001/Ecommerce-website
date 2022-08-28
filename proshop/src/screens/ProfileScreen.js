@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfile } from '../actions/userAction'
+import { listMyOrders } from '../actions/orderActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 const ProfileScreen = ({ location, history }) => {
@@ -25,8 +26,8 @@ const ProfileScreen = ({ location, history }) => {
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile)
   const { success } = userUpdateProfile
 
-  {/*const orderListMy = useSelector((state) => state.orderListMy)
-const { loading: loadingOrders, error: errorOrders, orders } = orderListMy*/}
+  const orderListMy = useSelector((state) => state.orderListMy)
+ const { loading: loadingOrders, error: errorOrders, orders } = orderListMy
 
   useEffect(() => {
     if (!userInfo) {
@@ -35,7 +36,7 @@ const { loading: loadingOrders, error: errorOrders, orders } = orderListMy*/}
       if (!user || !user.name || success) {
         dispatch({ type: USER_UPDATE_PROFILE_RESET })
         dispatch(getUserDetails('profile'))
-        {/*dispatch(listMyOrders())*/}
+        dispatch(listMyOrders())
       } else {
         setName(user.name)
         setEmail(user.email)
@@ -113,7 +114,7 @@ const { loading: loadingOrders, error: errorOrders, orders } = orderListMy*/}
       </Col>
       <Col md={9}>
         <h2>My Orders</h2>
-        {/*{loadingOrders ? (
+        {loadingOrders ? (
           <Loader />
         ) : errorOrders ? (
           <Message variant='danger'>{errorOrders}</Message>
@@ -160,7 +161,7 @@ const { loading: loadingOrders, error: errorOrders, orders } = orderListMy*/}
               ))}
             </tbody>
           </Table>
-                    )}*/}
+           )}
       </Col>
     </Row>
   )
