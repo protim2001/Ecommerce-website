@@ -22,7 +22,7 @@ import {
   PRODUCT_TOP_SUCCESS,
   PRODUCT_TOP_FAIL,
 } from '../constants/productConstants'
-//import { logout } from './userActions'
+import { logout } from './userAction'
 
 export const listProducts = () => async (
   dispatch
@@ -69,7 +69,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     })
   }
 }
-/*
+
 export const deleteProduct = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -245,4 +245,4 @@ export const listTopProducts = () => async (dispatch) => {
           : error.message,
     })
   }
-}*/
+}
