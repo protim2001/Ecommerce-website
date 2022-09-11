@@ -16,7 +16,7 @@ const ProductCarousel = () => {
     dispatch(listTopProducts())
   }, [dispatch])
 
-  return loading ? (
+  return loading ? ( 
     <Loader />
   ) : error ? (
     <Message variant='danger'>{error}</Message>
@@ -25,7 +25,7 @@ const ProductCarousel = () => {
       {products.map((product) => (
         <Carousel.Item key={product._id}>
           <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} roundedCircle centre/>
+            <Image src={product.image} alt={product.name} fluid/>
             <Carousel.Caption className='carousel-caption'> 
               <h2>
                 {product.name} (&#8377;{product.price})
