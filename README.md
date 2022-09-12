@@ -4,7 +4,7 @@ This is an eCommerce web application created with M(ongoDb)E(xpress)R(eact)N(ode
 Please Use this Paypal Sandbox account for making payments-
 Paypal Sandbox emailID- sb-v5tmn20487915@personal.example.com
 Paypal Sandbox Password - <EGI.-x2
-
+ 
 Features
 Full featured shopping cart
 Product reviews and ratings
